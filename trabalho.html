@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>Carlão games store</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="trabalho.css">
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body bgcolor= "blue">
+
+
+<div class="div1"><center><h1>Carlão games Store</h1></center></div>
+<div class="div2"><a><img src="forza.jpg" height="250px" width="350px"> </a></div>
+<div class="div3"><a><img src="gta.jpg" height="250px" width="350px"> </a></div>
+<div class="div4"><a><img src="ha.jpg" height="250px" width="350px"> </a></div>
+<div class="div5"><a><img src="god.png" height="250px" width="350px"> </a></div>
+
+
+
+
+
+
+
+<div id="app_soma" class="forma"> 
+             
+             
+               
+            <center> <button  v-on:click="forzaSomar" :disabled="isDisabled"><h1>Forza:R$300</button>                      
+             <button v-on:click="gtaSomar" :disabled="isDisabled"  ><h1> GTA:R$100</button>
+             	<button  v-on:click="homemaranhaSomar" :disabled="isDisabled" ><h1>Homem Aranha:R$250</button>
+             		<button v-on:click="godofwarSomar" :disabled="isDisabled" ><h1>God of war:R$180<h1></button>
+             			<center><h2>Total: {{total}} </h2>
+
+                            <button   v-on:click="comprarTudo" :disabled="isDisabled"><h1>Comprar</h1></button>
+
+
+                        </center>
+
+ <div> <form method="get" action="index.html">
+    <button type="submit">Curriculos</button>
+</form>
+</div>
+
+           
+        
+</div>
+
+
+<script>
+            
+            var app_soma = new Vue({
+                el:'#app_soma',
+                data:{
+                    forza: 300,
+                    gta: 100,
+                    homemaranha:250,
+                    godofwar:180,
+                    total:0,
+
+                },
+                methods:{
+                    comprarTudo: function(){
+                     this.isDisabled = true;  
+                    },
+                    forzaSomar: function(){
+                        this.total = this.forza + this.total;    
+                    },
+                    gtaSomar: function(){
+                        this.total = this.gta + this.total;
+                        },
+
+                        homemaranhaSomar: function(){
+                        this.total = this.homemaranha + this.total;
+                        
+                    },
+
+                        godofwarSomar: function(){
+                        this.total = this.godofwar + this.total;
+                    },
+                    subFuncao: function(){
+                        this.resultado = this.n1 - this.n2;    
+                    },                    
+             		}
+
+
+
+            	})
+ 
+		</script>
+
+       
+	</body>
+</html>
